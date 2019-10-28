@@ -1,0 +1,6 @@
+# platform :ios, '9.0'
+use_frameworks!
+target 'SparkPerso' do
+   pod 'DJI-SDK-iOS', '~> 4.8.2'
+   pod 'ImageDetect'
+end
