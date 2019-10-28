@@ -1,3 +1,5 @@
+[![Badge Loris](https://github.com/robinsimonklein/mabellemort/blob/master/loris-badge.png "Badge Loris")](https://github.com/DevLoris)
+
 # SparkStarterKitForStudents
 Quick and dirty starter kit for students: Use some basic commands of the DJI's SDK
 
