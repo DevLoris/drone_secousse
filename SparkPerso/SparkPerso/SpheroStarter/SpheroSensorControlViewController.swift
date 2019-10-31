@@ -70,7 +70,7 @@ class SpheroSensorControlViewController: UIViewController {
                 
                 //3600 = 3 secondes
                 if let logger = self.l, logger.started , logger.movementData.count >= logger.limit {
-                    SocketIOManager.instance.emit(channel: "save", value: logger.movementData) 
+                    SocketIOManager.instance.emit(channel: "save-movement", value: logger.movementData) 
                     logger.movementData = []
                 }
             }

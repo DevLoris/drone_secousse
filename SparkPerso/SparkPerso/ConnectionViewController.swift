@@ -21,8 +21,10 @@ class ConnectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib. 
         
+        
+       SocketIOManager.instance.setup()
+       SocketIOManager.instance.connect {}
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -46,8 +48,33 @@ class ConnectionViewController: UIViewController {
     // SPHERO CONNECTION
     @IBAction func connectionSpheroButtonClicked(_ sender: Any) {
         if(!isConnected){
-            SharedToyBox.instance.searchForBoltsNamed(["SB-2020"]) { err in
+            let balls = ["SB-C7A8"]
+            
+            balls.map { (value) in
+                SocketIOManager.instance.emit(channel: "sphero-init", value: value)
+            }
+            
+            SocketIOManager.instance.on(channel: "sphero-matrix") { (data:[Any]) in
+                
+                if
+                    data.count >= 2,
+                    let name = data.first,
+                    let str = name as? String {
+                        SharedToyBox.instance.bolts.map { k in
+                           if
+                               k.getName() == str {
+                                print("ball founded")
+                            SpheroMatrixUtils.setMatrix(data.last as! NSArray, to: k)
+                           }
+                       }
+                }
+                print(data)
+                
+            }
+            
+            SharedToyBox.instance.searchForBoltsNamed(balls) { err in
                 if err == nil {
+ 
                         self.connectionStateSpheroLabel.text = "Connected"
                         self.isConnected = true
                 }

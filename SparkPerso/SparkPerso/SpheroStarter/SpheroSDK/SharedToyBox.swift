@@ -75,6 +75,7 @@ extension SharedToyBox:ToyBoxListener{
                     self.searchCallBack?(nil)
                 }
             }
+            b.drawMatrix(fillFrom: Pixel(x: 0, y: 0), to: Pixel(x: 59, y: 59), color: .green)
             //b.setMainLed(color: .clear)
             //b.setBackLed(color: .clear)
             //b.setFrontLed(color: .clear)

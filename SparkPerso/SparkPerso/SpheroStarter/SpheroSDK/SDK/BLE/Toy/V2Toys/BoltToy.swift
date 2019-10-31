@@ -24,6 +24,10 @@ class BoltToy: SpheroV2Toy {
         }
     }
     
+    func getName() -> String {
+        return peripheral?.name ?? ""
+    }
+    
     func setMainLed(color: UIColor) {
         setMatrix(color: color)
     }

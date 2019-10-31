@@ -92,6 +92,7 @@
 		ED6370AD2359F08700ED60E2 /* SpheroTP1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6370AC2359F08700ED60E2 /* SpheroTP1ViewController.swift */; };
 		ED9470CF23699C2500221090 /* DeskClassifierV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = ED9470CE23699C2500221090 /* DeskClassifierV2.mlmodel */; };
 		ED9470DD2369C05400221090 /* SocketIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9470DC2369C05400221090 /* SocketIOManager.swift */; };
+		ED9470DF236AEDB700221090 /* SpheroMatrixUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9470DE236AEDB700221090 /* SpheroMatrixUtils.swift */; };
 		EDB7C4572358954B00540F06 /* TP1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C4562358954B00540F06 /* TP1ViewController.swift */; };
 		EDB7C4592358A9BC00540F06 /* DelayHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB7C4582358A9BC00540F06 /* DelayHelper.swift */; };
 /* End PBXBuildFile section */
@@ -207,6 +208,7 @@
 		ED6370AC2359F08700ED60E2 /* SpheroTP1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpheroTP1ViewController.swift; sourceTree = "<group>"; };
 		ED9470CE23699C2500221090 /* DeskClassifierV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeskClassifierV2.mlmodel; sourceTree = "<group>"; };
 		ED9470DC2369C05400221090 /* SocketIOManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketIOManager.swift; sourceTree = "<group>"; };
+		ED9470DE236AEDB700221090 /* SpheroMatrixUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpheroMatrixUtils.swift; sourceTree = "<group>"; };
 		EDB7C4562358954B00540F06 /* TP1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TP1ViewController.swift; sourceTree = "<group>"; };
 		EDB7C4582358A9BC00540F06 /* DelayHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -525,6 +527,7 @@
 			isa = PBXGroup;
 			children = (
 				ED6370AC2359F08700ED60E2 /* SpheroTP1ViewController.swift */,
+				ED9470DE236AEDB700221090 /* SpheroMatrixUtils.swift */,
 			);
 			path = TP;
 			sourceTree = "<group>";
@@ -778,6 +781,7 @@
 				61C3D67F231BF82F00F98C11 /* Color+Utils.swift in Sources */,
 				61C3D68C231BF82F00F98C11 /* CommandV1Sequencer.swift in Sources */,
 				61F339AB23250521000967B2 /* SpheroStatusViewController.swift in Sources */,
+				ED9470DF236AEDB700221090 /* SpheroMatrixUtils.swift in Sources */,
 				61C3D67B231BF82F00F98C11 /* MiniToy.swift in Sources */,
 				6117016021F60CB4009F47E4 /* UIImage+CVPixelBuffer.swift in Sources */,
 				EDB7C4572358954B00540F06 /* TP1ViewController.swift in Sources */,

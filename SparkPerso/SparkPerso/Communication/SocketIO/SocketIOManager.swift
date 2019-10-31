@@ -22,7 +22,7 @@ class SocketIOManager {
         }
         
         static func debugContext() -> Context {
-            return Context(secure: false, ip: "169.254.27.200", port: "3000", modeVerbose: false);
+            return Context(secure: false, ip: "169.254.27.200", port: "8001" , modeVerbose: false);
         }
     }
     

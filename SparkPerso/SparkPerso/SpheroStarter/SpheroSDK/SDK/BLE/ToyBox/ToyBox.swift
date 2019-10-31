@@ -126,6 +126,8 @@ extension ToyBox:CBCentralManagerDelegate{
         guard rssi < 0.0 && rssi > -70.0 else { return }
         
         let toyDescriptor = ToyDescriptor(name: peripheral.name, identifier: peripheral.identifier, peripheral: peripheral, rssi: Int(rssi), advertisedPower: 38)
+ 
+        
         listeners.forEach { $0.value?.toyBox(self, discovered: toyDescriptor) }
         
     }
