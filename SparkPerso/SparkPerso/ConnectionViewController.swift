@@ -51,7 +51,9 @@ class ConnectionViewController: UIViewController {
                         self.connectionStateSpheroLabel.text = "Connected"
                         self.isConnected = true
                 }
+                print(err)
             }
+        
         } else {
             self.connectionStateSpheroLabel.text = "Disconnected"
             self.isConnected = false

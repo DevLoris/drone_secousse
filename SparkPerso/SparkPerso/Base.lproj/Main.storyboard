@@ -538,7 +538,7 @@ Current Heading: 0</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9NH-9N-dEb" customClass="GraphView" customModule="SparkPerso" customModuleProvider="target">
-                                <rect key="frame" x="16" y="88" width="382" height="237"/>
+                                <rect key="frame" x="16" y="166" width="382" height="237"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="237" id="lvK-KM-Djn"/>
@@ -551,27 +551,52 @@ Current Heading: 0</string>
                                     <constraint firstAttribute="height" constant="237" id="6Ag-Ec-eeY"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOk-Gv-Oqy">
-                                <rect key="frame" x="164" y="484" width="87" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="START SAVE"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NEe-vV-gX9">
+                                <rect key="frame" x="20" y="105" width="378" height="32"/>
+                                <segments>
+                                    <segment title="Carre"/>
+                                    <segment title="Triangle"/>
+                                    <segment title="Rond"/>
+                                </segments>
                                 <connections>
-                                    <action selector="buttonClicked:" destination="zYA-3T-nBU" eventType="touchUpInside" id="B7z-0w-Kux"/>
+                                    <action selector="segmentedControlChanged:" destination="zYA-3T-nBU" eventType="valueChanged" id="oU2-5e-Giy"/>
                                 </connections>
-                            </button>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="NEe-vV-gX9" firstAttribute="leading" secondItem="be7-u4-myX" secondAttribute="leading" constant="20" id="155-zD-xL3"/>
+                            <constraint firstItem="be7-u4-myX" firstAttribute="trailing" secondItem="NEe-vV-gX9" secondAttribute="trailing" constant="16" id="48m-dV-O6y"/>
                             <constraint firstItem="9NH-9N-dEb" firstAttribute="leading" secondItem="be7-u4-myX" secondAttribute="leading" constant="16" id="Hfn-Aa-pwV"/>
                             <constraint firstItem="1pb-5m-DfK" firstAttribute="leading" secondItem="be7-u4-myX" secondAttribute="leading" constant="16" id="Iyu-UY-keg"/>
-                            <constraint firstItem="9NH-9N-dEb" firstAttribute="top" secondItem="be7-u4-myX" secondAttribute="top" id="M9c-kY-4qI"/>
+                            <constraint firstItem="9NH-9N-dEb" firstAttribute="top" secondItem="be7-u4-myX" secondAttribute="top" constant="78" id="M9c-kY-4qI"/>
+                            <constraint firstItem="NEe-vV-gX9" firstAttribute="top" secondItem="be7-u4-myX" secondAttribute="top" constant="17" id="PFI-pF-FXP"/>
+                            <constraint firstItem="9NH-9N-dEb" firstAttribute="top" secondItem="NEe-vV-gX9" secondAttribute="bottom" constant="30" id="ebY-kH-cdN"/>
                             <constraint firstItem="be7-u4-myX" firstAttribute="trailing" secondItem="1pb-5m-DfK" secondAttribute="trailing" constant="16" id="l9a-mh-RXD"/>
                             <constraint firstItem="be7-u4-myX" firstAttribute="trailing" secondItem="9NH-9N-dEb" secondAttribute="trailing" constant="16" id="moI-f2-WAd"/>
                             <constraint firstItem="be7-u4-myX" firstAttribute="bottom" secondItem="1pb-5m-DfK" secondAttribute="bottom" constant="20" id="rr9-WW-01M"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="be7-u4-myX"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Sensor" id="K9b-2l-ca5"/>
+                    <navigationItem key="navigationItem" title="Sensor" id="K9b-2l-ca5">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Start" id="9Jd-Lo-bRq">
+                                <connections>
+                                    <action selector="startBtnClicked:" destination="zYA-3T-nBU" id="3X9-G7-YrA"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Train" id="Lu2-Vg-wyJ">
+                                <connections>
+                                    <action selector="trainBtnClicked:" destination="zYA-3T-nBU" id="jJ6-ha-4di"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Predict" id="WI7-SH-ahT">
+                                <connections>
+                                    <action selector="predictBtnClicked:" destination="zYA-3T-nBU" id="PxK-UG-SGH"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="acceleroChart" destination="9NH-9N-dEb" id="v11-at-ZQn"/>
                         <outlet property="gyroChart" destination="1pb-5m-DfK" id="hGo-px-7TL"/>
@@ -1048,7 +1073,7 @@ Current Heading: 0</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7U-fh-bVe">
-                                <rect key="frame" x="90.5" y="447" width="46" height="56"/>
+                                <rect key="frame" x="90.5" y="447" width="194" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="194" id="Jwe-by-DgE"/>
                                     <constraint firstAttribute="height" constant="56" id="W2t-na-AjF"/>
@@ -1059,7 +1084,7 @@ Current Heading: 0</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qYY-Jt-PKr">
-                                <rect key="frame" x="131" y="441.5" width="80" height="67"/>
+                                <rect key="frame" x="279" y="441.5" width="80" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="67" id="1Dt-zM-geQ"/>
                                     <constraint firstAttribute="width" constant="80" id="P0E-Ug-bU7"/>

@@ -88,6 +88,13 @@
 		ED3D8D112359BCA6002D81C1 /* DroneMovementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D8D102359BCA6002D81C1 /* DroneMovementManager.swift */; };
 		ED3D8D132359BCB8002D81C1 /* SpheroMovementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3D8D122359BCB8002D81C1 /* SpheroMovementManager.swift */; };
 		ED4869DB2359AA5000A0FCEC /* Spark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6117056821F75E4D009F47E4 /* Spark.swift */; };
+		ED5A5411236B2EBF002E33A1 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A540A236B2EBE002E33A1 /* Cache.swift */; };
+		ED5A5412236B2EBF002E33A1 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A540B236B2EBE002E33A1 /* Error.swift */; };
+		ED5A5413236B2EBF002E33A1 /* Structure.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A540C236B2EBF002E33A1 /* Structure.swift */; };
+		ED5A5414236B2EBF002E33A1 /* NeuralNet.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A540D236B2EBF002E33A1 /* NeuralNet.swift */; };
+		ED5A5415236B2EBF002E33A1 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A540E236B2EBF002E33A1 /* Storage.swift */; };
+		ED5A5416236B2EBF002E33A1 /* Dataset.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A540F236B2EBF002E33A1 /* Dataset.swift */; };
+		ED5A5417236B2EBF002E33A1 /* Activation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A5410236B2EBF002E33A1 /* Activation.swift */; };
 		ED6370AA2359E21600ED60E2 /* UiViewController+Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6370A92359E21600ED60E2 /* UiViewController+Prompt.swift */; };
 		ED6370AD2359F08700ED60E2 /* SpheroTP1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6370AC2359F08700ED60E2 /* SpheroTP1ViewController.swift */; };
 		ED9470CF23699C2500221090 /* DeskClassifierV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = ED9470CE23699C2500221090 /* DeskClassifierV2.mlmodel */; };
@@ -203,6 +210,13 @@
 		ED3D8D0E2359BC92002D81C1 /* GenericMovementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericMovementManager.swift; sourceTree = "<group>"; };
 		ED3D8D102359BCA6002D81C1 /* DroneMovementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DroneMovementManager.swift; sourceTree = "<group>"; };
 		ED3D8D122359BCB8002D81C1 /* SpheroMovementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpheroMovementManager.swift; sourceTree = "<group>"; };
+		ED5A540A236B2EBE002E33A1 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		ED5A540B236B2EBE002E33A1 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		ED5A540C236B2EBF002E33A1 /* Structure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Structure.swift; sourceTree = "<group>"; };
+		ED5A540D236B2EBF002E33A1 /* NeuralNet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeuralNet.swift; sourceTree = "<group>"; };
+		ED5A540E236B2EBF002E33A1 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		ED5A540F236B2EBF002E33A1 /* Dataset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dataset.swift; sourceTree = "<group>"; };
+		ED5A5410236B2EBF002E33A1 /* Activation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activation.swift; sourceTree = "<group>"; };
 		ED6370A92359E21600ED60E2 /* UiViewController+Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiViewController+Prompt.swift"; sourceTree = "<group>"; };
 		ED6370AC2359F08700ED60E2 /* SpheroTP1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpheroTP1ViewController.swift; sourceTree = "<group>"; };
 		ED9470CE23699C2500221090 /* DeskClassifierV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeskClassifierV2.mlmodel; sourceTree = "<group>"; };
@@ -487,6 +501,7 @@
 		61DAFC0B200B9AB3001CB2E2 /* SparkPerso */ = {
 			isa = PBXGroup;
 			children = (
+				ED5A5418236B2EC4002E33A1 /* NeuralNet */,
 				ED9470DA2369C02B00221090 /* Communication */,
 				ED6370AE2359F0D100ED60E2 /* Models */,
 				61DAFC0E200B9AB3001CB2E2 /* ConnectionViewController.swift */,
@@ -519,6 +534,20 @@
 				9574723689CDFD5A62E8841B /* Pods_SparkPerso.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED5A5418236B2EC4002E33A1 /* NeuralNet */ = {
+			isa = PBXGroup;
+			children = (
+				ED5A5410236B2EBF002E33A1 /* Activation.swift */,
+				ED5A540A236B2EBE002E33A1 /* Cache.swift */,
+				ED5A540F236B2EBF002E33A1 /* Dataset.swift */,
+				ED5A540B236B2EBE002E33A1 /* Error.swift */,
+				ED5A540D236B2EBF002E33A1 /* NeuralNet.swift */,
+				ED5A540E236B2EBF002E33A1 /* Storage.swift */,
+				ED5A540C236B2EBF002E33A1 /* Structure.swift */,
+			);
+			path = NeuralNet;
 			sourceTree = "<group>";
 		};
 		ED6370AB2359F07300ED60E2 /* TP */ = {
@@ -762,11 +791,13 @@
 				6117015E21F60C7F009F47E4 /* ImageRecognition.swift in Sources */,
 				61C3D67C231BF82F00F98C11 /* ToyProtocols.swift in Sources */,
 				6184E2E521E8AFEB00895FDF /* AutoMoveViewController.swift in Sources */,
+				ED5A5413236B2EBF002E33A1 /* Structure.swift in Sources */,
 				61C3D673231BF82F00F98C11 /* SpheroV1ToyCore.swift in Sources */,
 				61C3D689231BF82F00F98C11 /* PowerStateResponse.swift in Sources */,
 				61C3D66C231BF82F00F98C11 /* SharedToyBox.swift in Sources */,
 				61C3D676231BF82F00F98C11 /* BB9EToy.swift in Sources */,
 				61C3D66F231BF82F00F98C11 /* SensorControl.swift in Sources */,
+				ED5A5415236B2EBF002E33A1 /* Storage.swift in Sources */,
 				61C3D67E231BF82F00F98C11 /* ToyBox.swift in Sources */,
 				61C3D679231BF82F00F98C11 /* R2D2Toy.swift in Sources */,
 				612304BB200BD77300F98395 /* LocationDelegate.swift in Sources */,
@@ -775,6 +806,7 @@
 				61C3D68B231BF82F00F98C11 /* CommandV1Operation.swift in Sources */,
 				61C3D66D231BF82F00F98C11 /* SDKUtils.swift in Sources */,
 				6184E2DE21E8ABCC00895FDF /* MovingManager.swift in Sources */,
+				ED5A5417236B2EBF002E33A1 /* Activation.swift in Sources */,
 				61C3D67F231BF82F00F98C11 /* Color+Utils.swift in Sources */,
 				61C3D68C231BF82F00F98C11 /* CommandV1Sequencer.swift in Sources */,
 				61F339AB23250521000967B2 /* SpheroStatusViewController.swift in Sources */,
@@ -787,8 +819,10 @@
 				6184E2E021E8ABE800895FDF /* Movement.swift in Sources */,
 				61C3D697231C170900F98C11 /* SpheroSensorControlViewController.swift in Sources */,
 				612304C0200BE41500F98395 /* MovementLevelOneViewController.swift in Sources */,
+				ED5A5416236B2EBF002E33A1 /* Dataset.swift in Sources */,
 				61C3D69C231C171F00F98C11 /* GraphView.swift in Sources */,
 				61C3D66E231BF82F00F98C11 /* Toy.swift in Sources */,
+				ED5A5411236B2EBF002E33A1 /* Cache.swift in Sources */,
 				61C3D67A231BF82F00F98C11 /* SpheroV2ToyCore.swift in Sources */,
 				ED6370AA2359E21600ED60E2 /* UiViewController+Prompt.swift in Sources */,
 				6117015B21F60C63009F47E4 /* MobileNet.mlmodel in Sources */,
@@ -798,10 +832,12 @@
 				6117015521F5F12D009F47E4 /* GimbalManager.swift in Sources */,
 				61C3D678231BF82F00F98C11 /* BoltToy.swift in Sources */,
 				61C3D685231BF82F00F98C11 /* ShouldActionCompleteResponse.swift in Sources */,
+				ED5A5412236B2EBF002E33A1 /* Error.swift in Sources */,
 				6117056921F75E4D009F47E4 /* Spark.swift in Sources */,
 				6184E2DB21E8ABB300895FDF /* CGPoints+Extensions.swift in Sources */,
 				61C3D693231BFE6900F98C11 /* SpheroDirectionViewController.swift in Sources */,
 				612304AA200BABF200F98395 /* ProductCommunicationManager.swift in Sources */,
+				ED5A5414236B2EBF002E33A1 /* NeuralNet.swift in Sources */,
 				61C3D691231BFD5F00F98C11 /* SpheroAimingViewController.swift in Sources */,
 				61C3D69E231C171F00F98C11 /* GraphSegment.swift in Sources */,
 				61D50D7220274586000842A3 /* AccelerometerViewController.swift in Sources */,
@@ -1006,7 +1042,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5P2JB4N3W3;
+				DEVELOPMENT_TEAM = 3C8B258UBN;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1015,7 +1051,7 @@
 				INFOPLIST_FILE = SparkPerso/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sparkperso.lolo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sparkperso.robin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1028,7 +1064,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5P2JB4N3W3;
+				DEVELOPMENT_TEAM = 3C8B258UBN;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1037,7 +1073,7 @@
 				INFOPLIST_FILE = SparkPerso/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sparkperso.lolo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sparkperso.robin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -26,28 +26,33 @@ class SpheroDirectionViewController: UIViewController {
     @IBOutlet weak var collisionLabel: UILabel!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         var boltCollision = [Bool]()
         
         SharedToyBox.instance.bolts.map {
+            $0.setCollisionDetection(configuration: CollisionConfiguration(detectionMethod: .simple, xThreshold: 20.0, xSpeedThreshold: 1, yThreshold: 20.0, ySpeedThreshold: 1, postTimeDeadZone: 1.0))
             $0.setStabilization(state: SetStabilization.State.on)
             $0.setCollisionDetection(configuration: .enabled)
             $0.onCollisionDetected = { collisionData in
                 
                 DispatchQueue.main.sync {
                     self.collisionLabel.text = "Aïe!!!"
+                    print("--")
+                    boltCollision.append(true)
                     if boltCollision.count == 2 {
                         print("Collision")
                     }
                     else {
-                        DelayHelper.delay(0.5) {
+                        DelayHelper.delay(0.1) {
                             boltCollision = []
                         }
                     }
-                    boltCollision.append(true)
+                    
+                    print(collisionData.impactPower)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                        self.collisionLabel.text = ""
+                        self.collisionLabel.text = "-"
                     }
                 }
                 
