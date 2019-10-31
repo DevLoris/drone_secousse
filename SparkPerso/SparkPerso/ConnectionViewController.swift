@@ -8,7 +8,8 @@
 
 import UIKit
 import DJISDK
-
+import SocketIO
+ 
 
 class ConnectionViewController: UIViewController {
     
@@ -16,10 +17,11 @@ class ConnectionViewController: UIViewController {
     @IBOutlet weak var connectionStateLabel: UILabel!
     let SSID = ""
     var isConnected = false
+    @IBOutlet weak var connectionStateSocketLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // Do any additional setup after loading the view, typically from a nib. 
         
     }
     
@@ -44,7 +46,7 @@ class ConnectionViewController: UIViewController {
     // SPHERO CONNECTION
     @IBAction func connectionSpheroButtonClicked(_ sender: Any) {
         if(!isConnected){
-            SharedToyBox.instance.searchForBoltsNamed(["SB-5D1C"]) { err in
+            SharedToyBox.instance.searchForBoltsNamed(["SB-2020"]) { err in
                 if err == nil {
                         self.connectionStateSpheroLabel.text = "Connected"
                         self.isConnected = true
@@ -57,11 +59,25 @@ class ConnectionViewController: UIViewController {
         }
     }
     
+    @IBAction func connectionSocketButtonClicked(_ sender: Any) { 
+        SocketIOManager.instance.setup()
+        SocketIOManager.instance.connect {
+            print("tttttttttttttttssg")
+            SocketIOManager.instance.on(channel: "test") { (received:String?) in
+                if let str = received {
+                    print(str)
+                }
+                else {
+                    print("noooo")
+                }
+            }
+        }
+    }
 }
 
 
 // SPARK CONNECTION
-extension ConnectionViewController {
+extension ConnectionViewController { 
     func trySparkConnection() {
         
         guard let connectedKey = DJIProductKey(param: DJIParamConnection) else {

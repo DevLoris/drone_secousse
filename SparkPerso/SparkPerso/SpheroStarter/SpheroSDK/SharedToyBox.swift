@@ -119,7 +119,7 @@ extension SharedToyBox:ToyBoxListener{
     func toyBox(_ toyBox: ToyBox, putAway toy: Toy) {
         print("put away")
         if let tt = toy as? BoltToy {
-            SharedToyBox.instance.bolts.removeAll {  t -> Bool in
+            SharedToyBox.instance.bolts.removeAll {   t -> Bool in
                 t.peripheral === tt.peripheral
             }
         }

@@ -19,8 +19,49 @@ class SpheroTP1ViewController: UIViewController {
         super.viewDidLoad()
         
         spheroMovementManager = SpheroMovementManager(sequence: [])
+        
+        SocketIOManager.instance.setup()
+        SocketIOManager.instance.connect {
+            print("tttttttttttttttssg")
+            SocketIOManager.instance.on(channel: "sphero-move") { (received:String?) in
+                if let str = received {
+                    self.manageCommand(cmd: str)
+                }
+                else {
+                    print("noooo")
+                }
+            }
+        }
     }
       
+    
+    func manageCommand(cmd:String) {
+        switch cmd {
+            case let t where t.contains("FRONT"):
+                var components = t.split(separator: ":")
+                components = Array(components.dropFirst())
+                
+                let heading = Double(components[0])!
+                let durationInSecond = Double(components[1])!
+                let speed = Float(components[2])!
+                
+                self.spheroMovementManager?.sequence.append(SpheroMove(heading: heading, durationInSecond: durationInSecond, speed: speed))
+                break
+            case "LEFT":
+                self.spheroMovementManager?.sequence.append(SpheroMove(heading: 90, durationInSecond: 0, speed: 0))
+                break
+            case "RIGHT":
+                self.spheroMovementManager?.sequence.append(SpheroMove(heading: 270, durationInSecond: 0, speed: 0))
+                break
+            case "STOP":
+                spheroMovementManager?.redAlert()
+                break
+            default:
+                break;
+        }
+        spheroMovementManager?.playSequence()
+    }
+    
 
     @IBAction func stop(_ sender: Any) {
         print("stop");

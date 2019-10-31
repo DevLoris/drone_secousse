@@ -13,7 +13,7 @@ import VideoToolbox
 class ImageRecognition {
     static let shared = ImageRecognition()
     
-    
+   //  let model = DeskClassifierV2()
     let model = MobileNet()
     
     /*
